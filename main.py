@@ -4,7 +4,7 @@ cursor = con.cursor()
 
 def insert_penghuni():
     query = 'insert into penghuni(namapenghuni) VALUES (\'%s\');'
-    query = query  % ('Alifia')
+    query = query  % ('Siska')
     cursor.execute(query)
     con.commit()
 
@@ -18,4 +18,4 @@ def select_penghuni():
         print(result)
 
 select_penghuni()
-# insert_penghuni()
+#insert_penghuni()
