@@ -1,128 +1,103 @@
-import controller
+from Post import userview
 
-# class main
 class main:
-	def __init__(self):
-		self.astri = controller.astri()
-		self.jadwal = controller.jadwal()
-		print("Selamat Datang di Sistem Penjadwalan Air Astri Pondok Pesantren \n===============================================================")
-	def mainMenu(self):
-		print("\n---------------------------")
-		print("MENU UTAMA\n1. Penjadwalan Air\n2. Biodata Astri\n3. Selesai")
-		pilihMenu = int(input("Pilih : "))
-		if pilihMenu == 1:
-			self.penjadwalanMenu()
-		elif pilihMenu == 2:
-			self.astriMenu()
-		elif pilihMenu == 3:
-			print("Terima Kasih...")
-			exit()
-		else:
-			print("PILIHAN SALAH")
-			self.mainMenu()
-	def penjadwalanMenu(self):
-		print("\n---------------------------")
-		print("MENU PENJADWALAN AIR\n1. Lihat Semua Jadwal\n2. Lihat Jadwal berdasarkan Id Jadwal\n3. Lihat Jadwal berdasarkan Id Astri\n4. Lihat Jadwal berdasarkan Hari\n5. Lihat Jadwal berdasarkan Tanggal\n6. Lihat Jadwal berdasarkan Kegiatan\n7. Tulis Jadwal\n8. Ubah Jadwal\n9. Hapus Jadwal\n10. Kembali\n11. Selesai")
-		pilihMenu = int(input("Pilih : "))
-		if pilihMenu == 1:
-			self.jadwal.get()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 2:
-			self.jadwal.getId()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 3:
-			self.jadwal.getIdAstri()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 4:
-			self.jadwal.getHari()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 5:
-			self.jadwal.getTanggal()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 6:
-			self.jadwal.getKegiatan()
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 7:
-			print(self.jadwal.insert())
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 8:
-			print(self.jadwal.update())
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 9:
-			print(self.jadwal.delete())
-			self.penjadwalanEndMenu()
-		elif pilihMenu == 10:
-			self.mainMenu()
-		elif pilihMenu == 11:
-			print("Terima Kasih...")
-			exit()
-		else:
-			print("PILIHAN SALAH")
-			self.penjadwalanMenu()
-	def astriMenu(self):
-		print("\n---------------------------")
-		print("MENU BIODATA ASTRI\n1. Lihat Semua Astri\n2. Lihat Astri berdasarkan Id Astri\n3. Lihat Astri berdasarkan Nama Astri\n4. Lihat Astri berdasarkan Semester\n5. Tulis Astri\n6. Ubah Astri\n7. Hapus Astri\n8. Kembali\n9. Selesai")
-		pilihMenu = int(input("Pilih : "))
-		if pilihMenu == 1:
-			self.astri.get()
-			self.astriEndMenu()
-		elif pilihMenu == 2:
-			self.astri.getId()
-			self.astriEndMenu()
-		elif pilihMenu == 3:
-			self.astri.getNama()
-			self.astriEndMenu()
-		elif pilihMenu == 4:
-			self.astri.getSemester()
-			self.astriEndMenu()
-		elif pilihMenu == 5:
-			print(self.astri.insert())
-			self.astriEndMenu()
-		elif pilihMenu == 6:
-			print(self.astri.update())
-			self.astriEndMenu()
-		elif pilihMenu == 7:
-			print(self.astri.delete())
-			self.astriEndMenu()
-		elif pilihMenu == 8:
-			self.mainMenu()
-		elif pilihMenu == 9:
-			print("Terima Kasih...")
-			exit()
-		else:
-			print("PILIHAN SALAH")
-			self.astriMenu()
-	def penjadwalanEndMenu(self):
-		print("\n--------")
-		print("MENU\n1. Kembali\n2. Selesai")
-		pilih = int(input("Pilih : "))
-		if pilih == 1:
-			self.penjadwalanMenu()
-		elif pilih == 2:
-			print("Terima Kasih...")
-			self.selesaiPenjadwalan()
-		else:
-			print("Pilihan Salah, Anda Keluar")
-			self.selesaiPenjadwalan()
-	def astriEndMenu(self):
-		print("\n--------")
-		print("MENU\n1. Kembali\n2. Selesai")
-		pilih = int(input("Pilih : "))
-		if pilih == 1:
-			self.astriMenu()
-		elif pilih == 2:
-			print("Terima Kasih...")
-			self.selesaiAstri()
-		else:
-			print("Pilihan Salah, Anda Keluar")
-			self.selesaiAstri()
-	def selesaiAstri(self):
-		self.astri.close()
-		exit()
-	def selesaiPenjadwalan(self):
-		self.jadwal.close()
-		exit()
-
+    def __init__(self):
+        print("Selamat Datang di Sistem Penjadwalan Air Astri Pondok Pesantren \n===============================================================")
+    def mainmenu(self):
+        print("Program Sistem Penjadwalan Air")
+        print("""
+        1. Jadwal Penggunaan
+        2. Tangki
+        3. Penggunaan
+        4. Exit
+        """)
+        inputan = int(input("Masukan Pilihan : "))
+        if  inputan == 1:
+            self.menujadwal()
+        elif  inputan == 2:
+            self.menutangki()
+        elif  inputan == 3:
+            self.menupenggunaan()
+        elif  inputan == 4:
+            exit()
+            
+    def menujadwal(self):
+        print("Menu Jadwal")
+        print("""
+        1. Lihat Penjadwalan Air
+        2. Penambahan Jadwal Penggunaan Air
+        3. Kembali menu awal
+        """)
+        inputan = int(input("Masukan Pilihan : "))
+        if inputan == 1:
+            userview.showJadwal()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menujadwal()
+        elif inputan == 2:
+            userview.insertJadwal()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menujadwal()
+        elif inputan == 3:
+            self.mainmenu()
+        else:
+            print("Anda salah input, kembali lagi ke program jadwal")
+            self.mainmenu()
+        
+    def menutangki(self):
+        print("Menu Tangki")
+        print("""
+        1. Lihat Tangki
+        2. Pengisian/Pengurangan liter tangki
+        3. History Tangki
+        4. Kembali menu awal
+        """)
+        inputan = int(input("Masukan Pilihan : "))
+        if inputan == 1:
+            userview.showTangki()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menutangki()
+        elif inputan == 2:
+            userview.updateTangki()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menutangki()
+        elif inputan == 3:
+            userview.showHistoryTangki()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menutangki()
+        elif inputan == 4:
+            self.mainmenu()
+        else:
+            print("Anda salah input, kembali lagi ke program jadwal")
+            self.mainmenu()    
+        
+    def menupenggunaan(self):
+        print("Menu Penggunaan")
+        print("""
+        1. Lihat Penggunaan
+        2. Penambahan Penggunaan
+        3. Kembali menu awal
+        """)
+        inputan = int(input("Masukan Pilihan : "))
+        if inputan == 1:
+            userview.showPenggunaan()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menupenggunaan()
+        elif inputan == 2:
+            userview.insertPenggunaan()
+            print("Program selesai, kembali ke menu sebelumnya")
+            self.menupenggunaan()
+        elif inputan == 3:
+            self.mainmenu()
+        else:
+            print("Anda salah input, kembali lagi ke program jadwal")
+            self.mainmenu()
 
 main = main()
-main.mainMenu()
+main.mainmenu()
+
+
+
+
+
+
+
