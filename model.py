@@ -4,7 +4,7 @@ import sqlite3
 class model:
 	def __init__(self):
 		try:
-		    self._conn = sqlite3.connect('database.sqlite')
+		    self._conn = sqlite3.connect('properties/database.sqlite')
 		    self._cursor = self._conn.cursor()
 		except:
 		    return("Error Gagal terkoneksi ke Database")
