@@ -1,4 +1,4 @@
-from Model import Model
+from model import Model
 
 class jadwal(Model):
     def __init__(self):
