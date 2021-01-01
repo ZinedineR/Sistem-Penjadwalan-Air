@@ -1,4 +1,4 @@
-from Model import Model
+from model import Model
 
 class jadwal(Model):
     def __init__(self):
@@ -99,7 +99,6 @@ class userview():
     def showJadwal():
         model = jadwal()
         data = model.view()
-        "jadwal_id","tangki_id","kategori_id","lorong_id","tangki_tanggal"
         print("===========================")
         print("Jadwal ID\t\tTangki ID\t\tkategori ID\t\tLorong ID\t\ttangki_tanggal")
         for n in data:
