@@ -5,7 +5,9 @@ class jadwal(Model):
         super().__init__("jadwal",["jadwal_id","tangki_id","kategori_id","lorong_id","tangki_tanggal"])
     def fiturjadwal(self):
         super().__init__("jadwal",["tangki_id","kategori_id","lorong_id","tangki_tanggal"])
-
+    def viewjadwal(self):
+        super().__init__("viewjadwal",["jadwal_id","tangki_id","lorong_id","penggunaan","tangki_tanggal"])
+        
 class tangki(Model):
     def __init__(self):
         super().__init__("tangki",["tangki_id","tangki_tanggal","jumlahairliter"])
@@ -19,14 +21,22 @@ class penggunaan(Model):
         super().__init__("penggunaan",["penggunaan_id","penghuni_id","kategori_id","tanggal_penggunaan"])
     def fiturpenggunaan(self):
         super().__init__("penggunaan",["penghuni_id","kategori_id","tanggal_penggunaan"])
-     
+    def viewpenggunaan(self):
+        super().__init__("viewpenggunaan",["penggunaan_id","namapenghuni","penggunaan","tanggal_penggunaan"]) 
+
 class lorong(Model):
     def __init__(self):
         super().__init__("lorong",["lorong_id","penghuni_id","namapenghuni"])
+    def orderedlorong(self):
+        super().__init__("orderedlorong",["lorong_id","penghuni_id","namapenghuni"])
+    def idlorong(self):
+        super().__init__("IDLORONG","lorong_id")
 
 class penghuni(Model):
     def __init__(self):
         super().__init__("penghuni",["penghuni_id","namapenghuni"])
+    def fiturpenghuni(self):
+        super().__init__("penghuni","namapenghuni")
 
 class kategori(Model):
     def __init__(self):
@@ -53,11 +63,22 @@ class userview():
             
     def showLorong():
         model = lorong()
+        model.orderedlorong()
         data = model.view()
         print("===========================")
         print("Lorong ID\t\tPenghuni ID\t\tNama Penghuni")
         for n in data:
             print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2])
+        print("===========================")
+    
+    def showIDLorong():
+        model = lorong()
+        model.idlorong()
+        data = model.view()
+        print("===========================")
+        print("Lorong ID")
+        for n in data:
+            print("\t\t",n[0])
         print("===========================")
             
     def showTangki():
@@ -78,25 +99,27 @@ class userview():
         for n in data:
             print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3])
         print("===========================")
-        
-    def showPenggunaan():
+            
+    def showviewPenggunaan():
         model = penggunaan()
+        model.viewpenggunaan()
         data = model.view()
         print("===========================")
-        print("Penggunaan ID\t\tPenghuni ID\t\tkategori ID\t\tTanggal Penggunaan")
+        print("Penggunaan ID\t\tNama Penghuni\t\tPenggunaan\t\tTanggal Penggunaan")
         for n in data:
             print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3])
         print("===========================")
-        
-    def showJadwal():
+            
+    def showviewJadwal():
         model = jadwal()
+        model.viewjadwal()
         data = model.view()
         print("===========================")
-        print("Jadwal ID\t\tTangki ID\t\tkategori ID\t\tLorong ID\t\ttangki_tanggal")
+        print("Jadwal ID\t\tTangki ID\t\tLorong ID\t\tpenggunaan\t\ttangki_tanggal")
         for n in data:
             print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3],"\t\t",n[4])
-        print("===========================")
-        
+        print("===========================")        
+   
     def updateTangki():
         model = tangki()
         model.liter()
@@ -123,9 +146,23 @@ class userview():
         idtangki = int(input("Inputkan tangki yang akan digunakan : "))
         userview.showKategori()
         idkategori = int(input("Inputkan tangki tersebut dijadwalkan untuk kegiatan apa : "))
-        userview.showLorong()
+        userview.showIDLorong()
         idlorong = int(input("Penggunaan tangki dan kategori tersebut digunakan untuk lorong : "))
         tanggal = "date()"
         model.insert([idtangki,idkategori,idlorong,tanggal])
-        
     
+    def insertPenghuni():
+        model = penghuni()
+        model.fiturpenghuni()
+        name = str(input("Masukkan nama penghuni baru : "))
+        model.insert_single(name)
+    
+    def insertLorong():
+        model = lorong()
+        userview.showIDLorong()
+        idlorong = int(input("Inputkan lorong yang ingin ditambahkan : "))
+        userview.showPenghuni()
+        idpenghuni = int(input("Inputkan penghuni ID yang ingin ditambahkan ke lorong tersebut : "))
+        name = "pass"
+        model.insert([idlorong,idpenghuni,name])    
+
