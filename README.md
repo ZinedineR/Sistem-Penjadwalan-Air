@@ -3,7 +3,7 @@ penerapan PBO untuk masalah fasilitas air di salah satu PPM di Jember, mengkonek
 Run the code in here >> https://repl.it/@ZinedineR/Sistem-Penjadwalan-Air#main.py
 
 Class Diagram :
-<img src="properties/Class Diagram.png">
+<img src="properties/CD.png">
 
 ERD Database :
 <img src="properties/ERD.png">
