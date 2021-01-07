@@ -3,53 +3,25 @@ from Post import userview
 class main:
     def __init__(self):
         print("Selamat Datang di Sistem Penjadwalan Air Astri Pondok Pesantren \n===============================================================")
-    def login(self):
-        print("Silahkan memilih login sebagai apa : ")
-        print("""
-        1. Admin
-        2. User
-        3. Exit
-        """)
-        inputan = int(input("Masukan Pilihan : "))
-        if  inputan == 1:
-            pwd = str(input("masukkan password login sebagai user : "))
-            if pwd == "root":
-                self.adminmainmenu()
-            else:
-                print("Anda salah password, kembali ke menu login")
-                self.login()
-        elif  inputan == 2:
-            self.menuuser()
-        elif  inputan == 3:
-            print("Terima kasih!")
-            return None
-        else:
-            print("Anda memasukkan inputan yang salah, kembali ke menu login")
-            self.login()
-        
-    def adminmainmenu(self):
+    def mainmenu(self):
         print("Program Sistem Penjadwalan Air")
         print("""
         1. Jadwal Penggunaan
         2. Tangki
-        3. lorong
-        4. Penghuni
-        5. Exit
+        3. Penggunaan
+        4. Exit
         """)
         inputan = int(input("Masukan Pilihan : "))
         if  inputan == 1:
-            self.menuadminjadwal()
+            self.menujadwal()
         elif  inputan == 2:
-            self.menuadmintangki()
+            self.menutangki()
         elif  inputan == 3:
-            self.menuadminlorong()
+            self.menupenggunaan()
         elif  inputan == 4:
-            self.menuadminpenghuni()
-        elif  inputan == 5:
-            print("Terima kasih!")
-            return None
+            exit()
             
-    def menuadminjadwal(self):
+    def menujadwal(self):
         print("Menu Jadwal")
         print("""
         1. Lihat Penjadwalan Air
@@ -58,20 +30,20 @@ class main:
         """)
         inputan = int(input("Masukan Pilihan : "))
         if inputan == 1:
-            userview.showviewJadwal()
+            userview.showJadwal()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminjadwal()
+            self.menujadwal()
         elif inputan == 2:
             userview.insertJadwal()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminjadwal()
+            self.menujadwal()
         elif inputan == 3:
-            self.adminmainmenu()
+            self.mainmenu()
         else:
             print("Anda salah input, kembali lagi ke program jadwal")
-            self.menuadminjadwal()
+            self.mainmenu()
         
-    def menuadmintangki(self):
+    def menutangki(self):
         print("Menu Tangki")
         print("""
         1. Lihat Tangki
@@ -83,95 +55,45 @@ class main:
         if inputan == 1:
             userview.showTangki()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadmintangki()
+            self.menutangki()
         elif inputan == 2:
             userview.updateTangki()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadmintangki()
+            self.menutangki()
         elif inputan == 3:
             userview.showHistoryTangki()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadmintangki()
+            self.menutangki()
         elif inputan == 4:
-            self.adminmainmenu()
+            self.mainmenu()
         else:
-            print("Anda salah input, kembali lagi ke program tangki")
-            self.menuadmintangki()   
-    
-    def menuadminlorong(self):
-        print("Menu Lorong")
-        print("""
-        1. Lihat Lorong
-        2. Penambahan Penghuni ke Lorong
-        3. Kembali menu awal
-        """)
-        inputan = int(input("Masukan Pilihan : "))
-        if inputan == 1:
-            userview.showLorong()
-            print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminlorong()
-        elif inputan == 2:
-            userview.insertLorong()
-            print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminlorong()
-        elif inputan == 3:
-            self.adminmainmenu()
-        else:
-            print("Anda salah input, kembali lagi ke program lorong")
-            self.menuadminlorong()
-            
-    def menuadminpenghuni(self):
-        print("Menu Penghuni")
-        print("""
-        1. Lihat Penghuni
-        2. Penambahan Penghuni
-        3. Kembali menu awal
-        """)
-        inputan = int(input("Masukan Pilihan : "))
-        if inputan == 1:
-            userview.showPenghuni()
-            print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminpenghuni()
-        elif inputan == 2:
-            userview.insertPenghuni()
-            print("Program selesai, kembali ke menu sebelumnya")
-            self.menuadminpenghuni()
-        elif inputan == 3:
-            self.adminmainmenu()
-        else:
-            print("Anda salah input, kembali lagi ke program penghuni")
-            self.menuadminpenghuni()
-            
-    def menuuser(self):
+            print("Anda salah input, kembali lagi ke program jadwal")
+            self.mainmenu()    
+        
+    def menupenggunaan(self):
         print("Menu Penggunaan")
         print("""
         1. Lihat Penggunaan
-        2. Lihat Jadwal
-        3. Penambahan Penggunaan
-        4. Exit
+        2. Penambahan Penggunaan
+        3. Kembali menu awal
         """)
         inputan = int(input("Masukan Pilihan : "))
         if inputan == 1:
-            userview.showviewPenggunaan()
+            userview.showPenggunaan()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuuser()
+            self.menupenggunaan()
         elif inputan == 2:
-            userview.showviewJadwal()
-            print("Program selesai, kembali ke menu sebelumnya")
-            self.menuuser()
-        elif inputan == 3:
             userview.insertPenggunaan()
             print("Program selesai, kembali ke menu sebelumnya")
-            self.menuuser()
-        elif inputan == 4:
-            print("Terima Kasih")
-            return None
+            self.menupenggunaan()
+        elif inputan == 3:
+            self.mainmenu()
         else:
-            print("Anda salah input, kembali lagi ke program penggunaan")
-            self.menuuser()
+            print("Anda salah input, kembali lagi ke program jadwal")
+            self.mainmenu()
 
 main = main()
-main.login()
+main.mainmenu()
 
 
 
