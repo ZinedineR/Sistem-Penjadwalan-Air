@@ -1,6 +1,6 @@
 # Sistem-Penjadwalan-Air
 penerapan PBO untuk masalah fasilitas air di salah satu PPM di Jember, mengkoneksikan dengan database sederhana
-Run the code in here >> https://repl.it/@ZinedineR/Sistem-Penjadwalan-Air#main.py
+Run the code in here >> https://replit.com/@ZinedineR/Sistem-Penjadwalan-Air-2#main.py
 
 Class Diagram :
 <img src="properties/CD.png">
