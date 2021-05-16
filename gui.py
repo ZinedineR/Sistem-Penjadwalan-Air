@@ -23,7 +23,7 @@ class loginPage ( wx.Frame ):
 
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )
 
-		self.plaintext = wx.StaticText( self, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_RIGHT )
+		self.plaintext = wx.StaticText( self, wx.ID_ANY, u"Login ", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_RIGHT )
 		self.plaintext.Wrap( -1 )
 
 		bSizer1.Add( self.plaintext, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
