@@ -532,6 +532,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickJadwalPenggunaan</event>
                             </object>
                         </object>
                     </object>
@@ -676,6 +677,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickTangki</event>
                             </object>
                         </object>
                     </object>
@@ -820,6 +822,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickLorong</event>
                             </object>
                         </object>
                     </object>
@@ -964,6 +967,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickPenghuni</event>
                             </object>
                         </object>
                     </object>
@@ -1210,7 +1214,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">see</event>
+                                <event name="OnButtonClick">clickLihat</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -1344,7 +1348,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">add</event>
+                                <event name="OnButtonClick">clickTambah</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -1417,7 +1421,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">back</event>
+                                <event name="OnButtonClick">clickKembali</event>
                             </object>
                         </object>
                     </object>
@@ -1442,7 +1446,7 @@
             <property name="minimum_size"></property>
             <property name="name">lihatPenjadwalanAir</property>
             <property name="pos"></property>
-            <property name="size">500,300</property>
+            <property name="size">569,300</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Lihat Penjadwalan Air</property>
@@ -1530,7 +1534,7 @@
                 </object>
                 <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
-                    <property name="flag">wxALL</property>
+                    <property name="flag">wxALIGN_CENTER|wxALL</property>
                     <property name="proportion">0</property>
                     <object class="wxGrid" expanded="0">
                         <property name="BottomDockable">1</property>
@@ -1556,10 +1560,10 @@
                         <property name="close_button">1</property>
                         <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                         <property name="col_label_size">30</property>
-                        <property name="col_label_values"></property>
+                        <property name="col_label_values">&quot;Jadwal ID&quot; &quot;Tangki ID&quot; &quot;Lorong ID&quot; &quot;Penggunaan&quot; &quot;Tangki_Tanggal&quot;</property>
                         <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                         <property name="cols">5</property>
-                        <property name="column_sizes"></property>
+                        <property name="column_sizes">80,80,80,99,130</property>
                         <property name="context_help"></property>
                         <property name="context_menu">1</property>
                         <property name="default_pane">0</property>
@@ -1702,7 +1706,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">back</event>
+                                <event name="OnButtonClick">clickKembali</event>
                             </object>
                         </object>
                     </object>
@@ -1839,10 +1843,10 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Tangki ID&quot; &quot;Tangki Tanggal&quot; &quot;Jumlah Air Liter&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">3</property>
-                                <property name="column_sizes"></property>
+                                <property name="column_sizes">80,109,117</property>
                                 <property name="context_help"></property>
                                 <property name="context_menu">1</property>
                                 <property name="default_pane">0</property>
@@ -2110,7 +2114,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">next</event>
+                                        <event name="OnButtonClick">clickSelanjutnya</event>
                                     </object>
                                 </object>
                             </object>
@@ -2249,10 +2253,10 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Kategori ID&quot; &quot;Deskripsi&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">2</property>
-                                <property name="column_sizes"></property>
+                                <property name="column_sizes">84,80</property>
                                 <property name="context_help"></property>
                                 <property name="context_menu">1</property>
                                 <property name="default_pane">0</property>
@@ -2520,7 +2524,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">next</event>
+                                        <event name="OnButtonClick">clickSelanjutnya</event>
                                     </object>
                                 </object>
                             </object>
@@ -2659,7 +2663,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Lorong ID&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">1</property>
                                 <property name="column_sizes"></property>
@@ -2930,7 +2934,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Done</event>
+                                        <event name="OnButtonClick">clickSelesai</event>
                                     </object>
                                 </object>
                             </object>
@@ -3109,6 +3113,7 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
+                        <event name="OnButtonClick">clickLihat</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="0">
@@ -3242,6 +3247,7 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
+                        <event name="OnButtonClick">clickCek</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="0">
@@ -3375,6 +3381,7 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
+                        <event name="OnButtonClick">clickHistori</event>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="0">
@@ -3447,6 +3454,7 @@
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
                         <property name="window_style"></property>
+                        <event name="OnButtonClick">clickKembali</event>
                     </object>
                 </object>
             </object>
@@ -3581,7 +3589,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Tangki ID&quot; &quot;Tangki Tanggal&quot; &quot;Jumlah Air Liter&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">3</property>
                                 <property name="column_sizes"></property>
@@ -3711,6 +3719,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickKembali</event>
                             </object>
                         </object>
                     </object>
@@ -3847,7 +3856,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Tangki ID&quot; &quot;Tangki Tanggal&quot; &quot;Jumlah Air Liter&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">3</property>
                                 <property name="column_sizes"></property>
@@ -4243,7 +4252,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Done</event>
+                                        <event name="OnButtonClick">clickSelesai</event>
                                     </object>
                                 </object>
                             </object>
@@ -4382,7 +4391,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;History ID&quot; &quot;Tangki ID&quot; &quot;Tanggal Tangki&quot; &quot;Jumlah Air Liter&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">4</property>
                                 <property name="column_sizes"></property>
@@ -4528,7 +4537,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Back</event>
+                                        <event name="OnButtonClick">clickKembali</event>
                                     </object>
                                 </object>
                             </object>
@@ -4777,6 +4786,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickLihat</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -4910,6 +4920,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickTambah</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -4982,7 +4993,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">Back</event>
+                                <event name="OnButtonClick">clickKembali</event>
                             </object>
                         </object>
                     </object>
@@ -5119,7 +5130,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Lorong ID&quot; &quot;Penghuni ID&quot; &quot;Nama Penghuni&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">3</property>
                                 <property name="column_sizes"></property>
@@ -5265,7 +5276,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Back</event>
+                                        <event name="OnButtonClick">clickKembali</event>
                                     </object>
                                 </object>
                             </object>
@@ -5404,7 +5415,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Lorong ID&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">1</property>
                                 <property name="column_sizes"></property>
@@ -5675,7 +5686,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Next</event>
+                                        <event name="OnButtonClick">clickSelanjutnya</event>
                                     </object>
                                 </object>
                             </object>
@@ -5744,7 +5755,7 @@
                         <property name="close_button">1</property>
                         <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                         <property name="col_label_size">30</property>
-                        <property name="col_label_values"></property>
+                        <property name="col_label_values">&quot;Penghuni ID&quot; &quot;Nama Penghuni&quot;</property>
                         <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                         <property name="cols">2</property>
                         <property name="column_sizes"></property>
@@ -6015,7 +6026,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">Done</event>
+                                <event name="OnButtonClick">clickSelesai</event>
                             </object>
                         </object>
                     </object>
@@ -6262,7 +6273,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">See</event>
+                                <event name="OnButtonClick">clickLihat</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -6396,7 +6407,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">Add</event>
+                                <event name="OnButtonClick">clickTambah</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -6469,7 +6480,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">Back</event>
+                                <event name="OnButtonClick">clickKembali</event>
                             </object>
                         </object>
                     </object>
@@ -6606,7 +6617,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Penghuni ID&quot; &quot;Nama Penghuni&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">2</property>
                                 <property name="column_sizes"></property>
@@ -6745,7 +6756,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Back</event>
+                                        <event name="OnButtonClick">clickKembali</event>
                                     </object>
                                 </object>
                             </object>
@@ -7058,6 +7069,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnButtonClick">clickSelesai</event>
                             </object>
                         </object>
                     </object>
@@ -7304,7 +7316,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">See</event>
+                                <event name="OnButtonClick">userClickLihat</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -7438,7 +7450,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">See</event>
+                                <event name="OnButtonClick">userClickLihat</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -7572,7 +7584,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
-                                <event name="OnButtonClick">Add</event>
+                                <event name="OnButtonClick">userClickTambah</event>
                             </object>
                         </object>
                     </object>
@@ -7709,7 +7721,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Pengguna ID&quot; &quot;Nama Penghuni&quot; &quot;Penggunaan&quot; &quot;Tanggal Penggunaan&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">4</property>
                                 <property name="column_sizes"></property>
@@ -7848,7 +7860,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Back</event>
+                                        <event name="OnButtonClick">userClickKembali</event>
                                     </object>
                                 </object>
                             </object>
@@ -7987,7 +7999,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Jadwal ID&quot; &quot;Tangki ID&quot; &quot;Lorong ID&quot; &quot;Penggunaan&quot; &quot;Tangki_Tanggal&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">5</property>
                                 <property name="column_sizes"></property>
@@ -8126,7 +8138,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Back</event>
+                                        <event name="OnButtonClick">userClickKembali</event>
                                     </object>
                                 </object>
                             </object>
@@ -8265,7 +8277,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Penghuni ID&quot; &quot;Nama Penghuni&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">2</property>
                                 <property name="column_sizes"></property>
@@ -8536,7 +8548,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Next</event>
+                                        <event name="OnButtonClick">userClickSelanjutnya</event>
                                     </object>
                                 </object>
                             </object>
@@ -8545,7 +8557,7 @@
                 </object>
             </object>
         </object>
-        <object class="Frame" expanded="1">
+        <object class="Frame" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -8572,16 +8584,16 @@
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
             <property name="xrc_skip_sizer">1</property>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer42</property>
                 <property name="orient">wxVERTICAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxALL</property>
                     <property name="proportion">0</property>
-                    <object class="wxStaticText" expanded="1">
+                    <object class="wxStaticText" expanded="0">
                         <property name="BottomDockable">1</property>
                         <property name="LeftDockable">1</property>
                         <property name="RightDockable">1</property>
@@ -8638,20 +8650,20 @@
                         <property name="wrap">-1</property>
                     </object>
                 </object>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">1</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer43</property>
                         <property name="orient">wxVERTICAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxALIGN_CENTER|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</property>
                             <property name="proportion">0</property>
-                            <object class="wxGrid" expanded="1">
+                            <object class="wxGrid" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
                                 <property name="RightDockable">1</property>
@@ -8675,7 +8687,7 @@
                                 <property name="close_button">1</property>
                                 <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                 <property name="col_label_size">30</property>
-                                <property name="col_label_values"></property>
+                                <property name="col_label_values">&quot;Kategori ID&quot; &quot;Deskripsi&quot;</property>
                                 <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="cols">2</property>
                                 <property name="column_sizes"></property>
@@ -8735,11 +8747,11 @@
                                 <property name="window_style"></property>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">1</property>
-                            <object class="wxFlexGridSizer" expanded="1">
+                            <object class="wxFlexGridSizer" expanded="0">
                                 <property name="cols">2</property>
                                 <property name="flexible_direction">wxBOTH</property>
                                 <property name="growablecols"></property>
@@ -8751,11 +8763,11 @@
                                 <property name="permission">none</property>
                                 <property name="rows">0</property>
                                 <property name="vgap">0</property>
-                                <object class="sizeritem" expanded="1">
+                                <object class="sizeritem" expanded="0">
                                     <property name="border">5</property>
                                     <property name="flag">wxALL</property>
                                     <property name="proportion">0</property>
-                                    <object class="wxStaticText" expanded="1">
+                                    <object class="wxStaticText" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -8812,11 +8824,11 @@
                                         <property name="wrap">-1</property>
                                     </object>
                                 </object>
-                                <object class="sizeritem" expanded="1">
+                                <object class="sizeritem" expanded="0">
                                     <property name="border">5</property>
                                     <property name="flag">wxALL</property>
                                     <property name="proportion">0</property>
-                                    <object class="wxTextCtrl" expanded="1">
+                                    <object class="wxTextCtrl" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -8876,11 +8888,11 @@
                                         <property name="window_style"></property>
                                     </object>
                                 </object>
-                                <object class="sizeritem" expanded="1">
+                                <object class="sizeritem" expanded="0">
                                     <property name="border">5</property>
                                     <property name="flag">wxALL</property>
                                     <property name="proportion">0</property>
-                                    <object class="wxButton" expanded="1">
+                                    <object class="wxButton" expanded="0">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -8946,7 +8958,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">Done</event>
+                                        <event name="OnButtonClick">userClickSelesai</event>
                                     </object>
                                 </object>
                             </object>
