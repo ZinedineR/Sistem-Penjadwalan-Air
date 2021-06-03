@@ -1,4 +1,5 @@
 from model import Model
+import gui
 
 class jadwal(Model):
     def __init__(self):
@@ -46,79 +47,47 @@ class userview():
     def showKategori():
         model = kategori()
         data = model.view()
-        print("===========================")
-        print("Kategori ID\t\tDeskripsi")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1])
-        print("===========================")
+        return data
     
     def showPenghuni():
         model = penghuni()
         data = model.view()
-        print("===========================")
-        print("Penghuni ID\t\tNama Penghuni")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1])
-        print("===========================")
+        return data
             
     def showLorong():
         model = lorong()
         model.orderedlorong()
         data = model.view()
-        print("===========================")
-        print("Lorong ID\t\tPenghuni ID\t\tNama Penghuni")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2])
-        print("===========================")
+        return data
     
     def showIDLorong():
         model = lorong()
         model.idlorong()
         data = model.view()
-        print("===========================")
-        print("Lorong ID")
-        for n in data:
-            print("\t\t",n[0])
-        print("===========================")
+        return data
             
     def showTangki():
         model = tangki()
         data = model.view()
-        print("===========================")
-        print("Tangki ID\t\tTangki Tangal\t\tJumlah air liter")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2])
-        print("===========================")
+        return data
     
     def showHistoryTangki():
         model = tangki()
         model.historytangki()
         data = model.view()
-        print("===========================")
-        print("History ID\t\tTangki ID\t\tTanggal Tangki\t\tJumlah air liter")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3])
-        print("===========================")
+        return data
             
     def showviewPenggunaan():
         model = penggunaan()
         model.viewpenggunaan()
         data = model.view()
-        print("===========================")
-        print("Penggunaan ID\t\tNama Penghuni\t\tPenggunaan\t\tTanggal Penggunaan")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3])
-        print("===========================")
+        return data
             
     def showviewJadwal():
         model = jadwal()
         model.viewjadwal()
         data = model.view()
-        print("===========================")
-        print("Jadwal ID\t\tTangki ID\t\tLorong ID\t\tpenggunaan\t\ttangki_tanggal")
-        for n in data:
-            print("\t\t",n[0],"\t\t",n[1],"\t\t",n[2],"\t\t",n[3],"\t\t",n[4])
-        print("===========================")        
+        return data       
    
     def updateTangki():
         model = tangki()
@@ -142,15 +111,8 @@ class userview():
     def insertJadwal():
         model = jadwal()
         model.fiturjadwal()
-        userview.showTangki()
-        idtangki = int(input("Inputkan tangki yang akan digunakan : "))
-        userview.showKategori()
-        idkategori = int(input("Inputkan tangki tersebut dijadwalkan untuk kegiatan apa : "))
-        userview.showIDLorong()
-        idlorong = int(input("Penggunaan tangki dan kategori tersebut digunakan untuk lorong : "))
-        tanggal = "date()"
-        model.insert([idtangki,idkategori,idlorong,tanggal])
-    
+        return model
+        
     def insertPenghuni():
         model = penghuni()
         model.fiturpenghuni()
@@ -166,3 +128,4 @@ class userview():
         name = "pass"
         model.insert([idlorong,idpenghuni,name])    
 
+print(userview.showviewJadwal())

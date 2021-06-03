@@ -190,7 +190,7 @@
                                 <property name="validator_style">wxFILTER_NONE</property>
                                 <property name="validator_type">wxDefaultValidator</property>
                                 <property name="validator_variable"></property>
-                                <property name="value"></property>
+                                <property name="value">jkasjhdjad</property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
@@ -1729,7 +1729,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">tambahPenjadwalanAir</property>
+            <property name="name">tambahPenjadwalanAirone</property>
             <property name="pos"></property>
             <property name="size">621,291</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -1786,7 +1786,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Tambah Penjadwalan Air</property>
+                        <property name="name">TambahPenjadwalanAir</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -2139,7 +2139,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">tambahPenjadwalanAir</property>
+            <property name="name">tambahPenjadwalanAirtwo</property>
             <property name="pos"></property>
             <property name="size">501,272</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -2549,7 +2549,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">tambahPenjadwalanAir</property>
+            <property name="name">tambahPenjadwalanAirthree</property>
             <property name="pos"></property>
             <property name="size">500,300</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -3157,7 +3157,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">pengisian/pengurangan</property>
+                        <property name="name">pengisianpengurangan</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -3214,7 +3214,7 @@
                         <property name="gripper">0</property>
                         <property name="hidden">0</property>
                         <property name="id">wxID_ANY</property>
-                        <property name="label">Cek</property>
+                        <property name="label">Update Tangki</property>
                         <property name="margins"></property>
                         <property name="markup">0</property>
                         <property name="max_size"></property>
@@ -3291,7 +3291,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Histori Tangki</property>
+                        <property name="name">HistoriTangki</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -3742,7 +3742,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">pengisian/penguranganLiter</property>
+            <property name="name">pengisianpenguranganLiter</property>
             <property name="pos"></property>
             <property name="size">530,335</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -3799,7 +3799,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Pengisian/Pengurangan Liter Tangki</property>
+                        <property name="name">PengisianPenguranganLiterTangki</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -4277,7 +4277,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">History angki</property>
+            <property name="name">HistoryTangki</property>
             <property name="pos"></property>
             <property name="size">500,300</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -4619,7 +4619,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Menu Lorong</property>
+                        <property name="name">MenuLorong</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -5301,7 +5301,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">penambahanPenghuni</property>
+            <property name="name">penambahanPenghunione</property>
             <property name="pos"></property>
             <property name="size">500,300</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -5358,7 +5358,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Penambahan Penghuni Lorong</property>
+                        <property name="name">PenambahanPenghuniLorong</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -5711,7 +5711,7 @@
             <property name="id">wxID_ANY</property>
             <property name="maximum_size"></property>
             <property name="minimum_size"></property>
-            <property name="name">penambahanPenghuni</property>
+            <property name="name">penambahanPenghunitwo</property>
             <property name="pos"></property>
             <property name="size">555,403</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
@@ -6317,7 +6317,7 @@
                                 <property name="minimize_button">0</property>
                                 <property name="minimum_size"></property>
                                 <property name="moveable">1</property>
-                                <property name="name">Penambahan Penghuni</property>
+                                <property name="name">PenambahanPenghuni</property>
                                 <property name="pane_border">1</property>
                                 <property name="pane_position"></property>
                                 <property name="pane_size"></property>
@@ -6838,7 +6838,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Tambah Penghuni</property>
+                        <property name="name">TambahPenghuni</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
@@ -8630,7 +8630,7 @@
                         <property name="minimize_button">0</property>
                         <property name="minimum_size"></property>
                         <property name="moveable">1</property>
-                        <property name="name">Penambahan Penggunaan</property>
+                        <property name="name">PenambahanPenggunaan</property>
                         <property name="pane_border">1</property>
                         <property name="pane_position"></property>
                         <property name="pane_size"></property>
