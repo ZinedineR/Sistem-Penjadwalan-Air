@@ -1,7 +1,6 @@
-from Post import userview
+from Post import userview, saving
 import gui
 import wx
-saver =[]
 #halaman awal
 class thegui(gui.loginPage):
     def __init__(self, parent):
@@ -11,7 +10,6 @@ class thegui(gui.loginPage):
     def clickLogin(self, event):
         # pwd = str(self.text_password.GetValue())
         pwd = self.text_password.GetValue()
-        print(pwd)
         if pwd == "root":
             adminMenuFrame = adminGui(None)
             adminMenuFrame.Show()
@@ -19,30 +17,26 @@ class thegui(gui.loginPage):
     
     def userClickLogin(self, event):
         self.Hide()
-        adminMenuFrame = adminGui(None)
-        adminMenuFrame.Show()
-
+        userMenuFrame = userGui(None)
+        userMenuFrame.Show()
+                                     
 #halaman awal admin       
 class adminGui(gui.adminMenu):
     def __init__(self, parent):
         gui.adminMenu.__init__(self, parent)
         self.Show()
-        
     def clickJadwalPenggunaan(self, event):
         self.Hide()
         JadwalPenggunaanFrame = adminJadwalPenggunaan(None)
         JadwalPenggunaanFrame.Show()
-    
     def clickTangki(self, event):
         self.Hide()
         menuTangkiFrame = adminmenuTangki(None)
         menuTangkiFrame.Show()
-        
     def clickLorong(self, event):
         self.Hide()
         lorongPageFrame = adminlorongPage(None)
         lorongPageFrame.Show()
-        
     def clickPenghuni(self, event):
         self.Hide()
         penghuniPageFrame = adminpenghuniPage(None)
@@ -68,9 +62,9 @@ class adminlihatPenjadwalanAir(gui.lihatPenjadwalanAir):
     def __init__(self, parent):
         gui.lihatPenjadwalanAir.__init__(self, parent)
         data = userview.showviewJadwal()
-        for n in range(len(data)):
-            for i in range(len(data[n])):
-                self.m_grid6.SetCellValue(n,i,str(data[n][i]))
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid6.SetCellValue(row,col,str(data[row][col]))
         self.Show()
     def clickKembali(self, event):
         self.Hide()
@@ -80,13 +74,13 @@ class admintambahPenjadwalanAirone(gui.tambahPenjadwalanAirone):
     def __init__(self, parent):
         gui.tambahPenjadwalanAirone.__init__(self, parent)
         data = userview.showTangki()
-        for n in range(len(data)):
-            for i in range(len(data[n])):
-                self.m_grid4.SetCellValue(n,i,str(data[n][i]))
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid4.SetCellValue(row,col,str(data[row][col]))
         self.Show()
     def clickSelanjutnya(self, event):
         idtangki = int(self.m_textCtrl4.GetValue())
-        saver.append(int(idtangki))
+        saving(int(idtangki))
         self.Hide()
         tambahPenjadwalanAirtwoFrame = admintambahPenjadwalanAirtwo(None)
         tambahPenjadwalanAirtwoFrame.Show()
@@ -94,13 +88,13 @@ class admintambahPenjadwalanAirtwo(gui.tambahPenjadwalanAirtwo):
     def __init__(self, parent):
         gui.tambahPenjadwalanAirtwo.__init__(self, parent)
         data = userview.showKategori()
-        for n in range(len(data)):
-            for i in range(len(data[n])):
-                self.m_grid3.SetCellValue(n,i,str(data[n][i]))
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid3.SetCellValue(row,col,str(data[row][col]))
         self.Show()
     def clickSelanjutnya(self, event):
         idkategori = int(self.m_textCtrl3.GetValue())
-        saver.append(int(idkategori))
+        saving(int(idkategori))
         self.Hide()
         tambahPenjadwalanAirthreeFrame = admintambahPenjadwalanAirthree(None)
         tambahPenjadwalanAirthreeFrame.Show()
@@ -108,18 +102,19 @@ class admintambahPenjadwalanAirthree(gui.tambahPenjadwalanAirthree):
     def __init__(self, parent):
         gui.tambahPenjadwalanAirthree.__init__(self, parent)
         data = userview.showIDLorong()
-        for n in range(len(data)):
-            for i in range(len(data[n])):
-                self.m_grid5.SetCellValue(n,i,str(data[n][i]))
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid5.SetCellValue(row,col,str(data[row][col]))
         self.Show()
     def clickSelesai(self, event):
         idlorong = int(self.m_textCtrl4.GetValue())
-        saver.append(int(idlorong))
-        saver.append('date()')
+        saving(int(idlorong))
+        saving('date()')
         self.Hide()   
         userview.insertJadwal()
         lihatPenjadwalanAirFrame = adminlihatPenjadwalanAir(None)
-        lihatPenjadwalanAirFrame.Show()            
+        lihatPenjadwalanAirFrame.Show()
+
 #halaman admin Tangki
 class adminmenuTangki(gui.menuTangki):
     def __init__(self, parent):
@@ -144,15 +139,44 @@ class adminmenuTangki(gui.menuTangki):
 class adminlihatTangki(gui.lihatTangki):
     def __init__(self, parent):
         gui.lihatTangki.__init__(self, parent)
+        data = userview.showTangki()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid3.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        menuTangkiFrame = adminmenuTangki(None)
+        menuTangkiFrame.Show()
 class adminpengisianpenguranganLiter(gui.pengisianpenguranganLiter):
     def __init__(self, parent):
         gui.pengisianpenguranganLiter.__init__(self, parent)
+        data = userview.showTangki()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid7.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def clickSelesai(self, event):
+        idtangki = int(self.m_textCtrl5.GetValue())
+        liter = int(self.m_textCtrl6.GetValue())
+        saving(idtangki)
+        saving(liter)
+        self.Hide()   
+        userview.updateTangki()
+        lihatTangkiFrame = adminlihatTangki(None)
+        lihatTangkiFrame.Show()
 class adminHistoryTangki(gui.HistoryTangki):
     def __init__(self, parent):
         gui.HistoryTangki.__init__(self, parent)
-        self.Show()                              
+        data = userview.showHistoryTangki()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid8.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        menuTangkiFrame = adminmenuTangki(None)
+        menuTangkiFrame.Show()                                  
 #halaman admin lorong page        
 class adminlorongPage(gui.lorongPage):
     def __init__(self, parent):
@@ -173,11 +197,45 @@ class adminlorongPage(gui.lorongPage):
 class adminlihatLorong(gui.lihatLorong):
     def __init__(self, parent):
         gui.lihatLorong.__init__(self, parent)
+        data = userview.showLorong()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid10.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        lorongPageFrame = adminlorongPage(None)
+        lorongPageFrame.Show()
 class adminpenambahanPenghunione(gui.penambahanPenghunione):
     def __init__(self, parent):
         gui.penambahanPenghunione.__init__(self, parent)
+        data = userview.showIDLorong()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid11.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def clickSelanjutnya(self, event):
+        idlorong = int(self.m_textCtrl7.GetValue())
+        saving(idlorong)
+        self.Hide()
+        adminpenambahanPenghunitwoFrame = adminpenambahanPenghunitwo(None)
+        adminpenambahanPenghunitwoFrame.Show()        
+class adminpenambahanPenghunitwo(gui.penambahanPenghunitwo):
+    def __init__(self, parent):
+        gui.penambahanPenghunitwo.__init__(self, parent)
+        data = userview.showPenghuni()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid12.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickSelesai(self, event):
+        idpenghuni = int(self.m_textCtrl8.GetValue())
+        saving(idpenghuni)
+        saving('pass')
+        self.Hide()   
+        userview.insertLorong()
+        lihatLorongFrame = adminlihatLorong(None)
+        lihatLorongFrame.Show()                
 #halaman admin penghuni page       
 class adminpenghuniPage(gui.penghuniPage):
     def __init__(self, parent):
@@ -198,192 +256,102 @@ class adminpenghuniPage(gui.penghuniPage):
 class adminlihatPenghuni(gui.lihatPenghuni):
     def __init__(self, parent):
         gui.lihatPenghuni.__init__(self, parent)
+        data = userview.showPenghuni()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid13.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        penghuniPageFrame = adminpenghuniPage(None)
+        penghuniPageFrame.Show()        
 class adminpenambahanPenghuni(gui.penambahanPenghuni):
     def __init__(self, parent):
         gui.penambahanPenghuni.__init__(self, parent)
-        self.Show()        
+        self.Show()
+    def clickSelesai(self, event):
+        namapenghuni = str(self.m_textCtrl9.GetValue())
+        saving(namapenghuni)
+        self.Hide()   
+        userview.insertPenghuni()
+        lihatPenghuniFrame = adminlihatPenghuni(None)
+        lihatPenghuniFrame.Show() 
+
+#halaman awal user
+class userGui(gui.userMenu):
+    def __init__(self, parent):
+        gui.userMenu.__init__(self, parent)
+        self.Show()
+
+    def ClickLihatPenggunaan(self, event):
+        self.Hide()
+        lihatPenggunaanFrame = userlihatPenggunaan(None)
+        lihatPenggunaanFrame.Show()
+    
+    def ClickLihatJadwal(self, event):
+        self.Hide()
+        lihatJadwalFrame = userlihatJadwal(None)
+        lihatJadwalFrame.Show()
+        
+    def ClickTambahPenggunaan(self, event):
+        self.Hide()
+        penambahanPenggunaanoneFrame = userpenambahanPenggunaanone(None)
+        penambahanPenggunaanoneFrame.Show()
+class userlihatPenggunaan(gui.lihatPenggunaan):
+    def __init__(self, parent):
+        gui.lihatPenggunaan.__init__(self, parent)
+        data = userview.showviewPenggunaan()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid14.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        userMenuFrame = userGui(None)
+        userMenuFrame.Show()
+class userlihatJadwal(gui.lihatJadwal):
+    def __init__(self, parent):
+        gui.lihatJadwal.__init__(self, parent)
+        data = userview.showviewJadwal()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid15.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickKembali(self, event):
+        self.Hide()
+        userMenuFrame = userGui(None)
+        userMenuFrame.Show()
+class userpenambahanPenggunaanone(gui.penambahanPenggunaanone):
+    def __init__(self, parent):
+        gui.penambahanPenggunaanone.__init__(self, parent)
+        data = userview.showPenghuni()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid16.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickSelanjutnya(self, event):
+        idpengguna = int(self.m_textCtrl10.GetValue())
+        saving(idpengguna)
+        self.Hide()
+        penambahanPenggunaantwoFrame = userpenambahanPenggunaantwo(None)
+        penambahanPenggunaantwoFrame.Show()
+class userpenambahanPenggunaantwo(gui.penambahanPenggunaantwo):
+    def __init__(self, parent):
+        gui.penambahanPenggunaantwo.__init__(self, parent)
+        data = userview.showKategori()
+        for row in range(len(data)):
+            for col in range(len(data[row])):
+                self.m_grid17.SetCellValue(row,col,str(data[row][col]))
+        self.Show()
+    def clickSelesai(self, event):
+        idkategori = int(self.m_textCtrl11.GetValue())
+        saving(idkategori)
+        saving('date()')
+        self.Hide()
+        userview.insertPenggunaan()
+        lihatPenggunaanFrame = userlihatPenggunaan(None)
+        lihatPenggunaanFrame.Show()                 
 app = wx.App()
 loginframe = thegui(None)
 loginframe.Show()
 app.MainLoop()
-# class main:
-#     def __init__(self):
-#         print("Selamat Datang di Sistem Penjadwalan Air Astri Pondok Pesantren \n===============================================================")
-#     def login(self):
-#         print("Silahkan memilih login sebagai apa : ")
-#         print("""
-#         1. Admin
-#         2. User
-#         3. Exit
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if  inputan == 1:
-#             pwd = str(input("masukkan password login sebagai user : "))
-#             if pwd == "root":
-#                 self.adminmainmenu()
-#             else:
-#                 print("Anda salah password, kembali ke menu login")
-#                 self.login()
-#         elif  inputan == 2:
-#             self.menuuser()
-#         elif  inputan == 3:
-#             print("Terima kasih!")
-#             return None
-#         else:
-#             print("Anda memasukkan inputan yang salah, kembali ke menu login")
-#             self.login()
-        
-#     def adminmainmenu(self):
-#         print("Program Sistem Penjadwalan Air")
-#         print("""
-#         1. Jadwal Penggunaan
-#         2. Tangki
-#         3. lorong
-#         4. Penghuni
-#         5. Exit
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if  inputan == 1:
-#             self.menuadminjadwal()
-#         elif  inputan == 2:
-#             self.menuadmintangki()
-#         elif  inputan == 3:
-#             self.menuadminlorong()
-#         elif  inputan == 4:
-#             self.menuadminpenghuni()
-#         elif  inputan == 5:
-#             print("Terima kasih!")
-#             return None
-            
-#     def menuadminjadwal(self):
-#         print("Menu Jadwal")
-#         print("""
-#         1. Lihat Penjadwalan Air
-#         2. Penambahan Jadwal Penggunaan Air
-#         3. Kembali menu awal
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if inputan == 1:
-#             userview.showviewJadwal()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminjadwal()
-#         elif inputan == 2:
-#             userview.insertJadwal()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminjadwal()
-#         elif inputan == 3:
-#             self.adminmainmenu()
-#         else:
-#             print("Anda salah input, kembali lagi ke program jadwal")
-#             self.menuadminjadwal()
-        
-#     def menuadmintangki(self):
-#         print("Menu Tangki")
-#         print("""
-#         1. Lihat Tangki
-#         2. Pengisian/Pengurangan liter tangki
-#         3. History Tangki
-#         4. Kembali menu awal
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if inputan == 1:
-#             userview.showTangki()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadmintangki()
-#         elif inputan == 2:
-#             userview.updateTangki()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadmintangki()
-#         elif inputan == 3:
-#             userview.showHistoryTangki()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadmintangki()
-#         elif inputan == 4:
-#             self.adminmainmenu()
-#         else:
-#             print("Anda salah input, kembali lagi ke program tangki")
-#             self.menuadmintangki()   
-    
-#     def menuadminlorong(self):
-#         print("Menu Lorong")
-#         print("""
-#         1. Lihat Lorong
-#         2. Penambahan Penghuni ke Lorong
-#         3. Kembali menu awal
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if inputan == 1:
-#             userview.showLorong()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminlorong()
-#         elif inputan == 2:
-#             userview.insertLorong()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminlorong()
-#         elif inputan == 3:
-#             self.adminmainmenu()
-#         else:
-#             print("Anda salah input, kembali lagi ke program lorong")
-#             self.menuadminlorong()
-            
-#     def menuadminpenghuni(self):
-#         print("Menu Penghuni")
-#         print("""
-#         1. Lihat Penghuni
-#         2. Penambahan Penghuni
-#         3. Kembali menu awal
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if inputan == 1:
-#             userview.showPenghuni()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminpenghuni()
-#         elif inputan == 2:
-#             userview.insertPenghuni()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuadminpenghuni()
-#         elif inputan == 3:
-#             self.adminmainmenu()
-#         else:
-#             print("Anda salah input, kembali lagi ke program penghuni")
-#             self.menuadminpenghuni()
-            
-#     def menuuser(self):
-#         print("Menu Penggunaan")
-#         print("""
-#         1. Lihat Penggunaan
-#         2. Lihat Jadwal
-#         3. Penambahan Penggunaan
-#         4. Exit
-#         """)
-#         inputan = int(input("Masukan Pilihan : "))
-#         if inputan == 1:
-#             userview.showviewPenggunaan()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuuser()
-#         elif inputan == 2:
-#             userview.showviewJadwal()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuuser()
-#         elif inputan == 3:
-#             userview.insertPenggunaan()
-#             print("Program selesai, kembali ke menu sebelumnya")
-#             self.menuuser()
-#         elif inputan == 4:
-#             print("Terima Kasih")
-#             return None
-#         else:
-#             print("Anda salah input, kembali lagi ke program penggunaan")
-#             self.menuuser()
-
-
-
-
-
-
-
-
-
-
-

@@ -42,7 +42,16 @@ class penghuni(Model):
 class kategori(Model):
     def __init__(self):
         super().__init__("kategori",["kategori_id","deskripsi"])
-        
+
+global saver
+saver = []            
+def saving(data):
+    saver.append(data)
+    return saver
+def delete():
+    saver.clear()
+    return saver
+
 class userview():
     def showKategori():
         model = kategori()
@@ -93,39 +102,29 @@ class userview():
         model = tangki()
         model.liter()
         userview.showTangki()
-        keyword = int(input("Inputkan id tangki yang ingin di isi : "))
-        values = int(input("tambahkan jumlah liter (gunakan - jika ingin mengurangi) : "))
         wherekey = "tangki_id"
-        model.update(values,wherekey,keyword)
+        model.update(saver[1],wherekey,saver[0])
+        delete()
         
     def insertPenggunaan():
         model = penggunaan()
         model.fiturpenggunaan()
-        userview.showPenghuni()
-        idpenghuni = int(input("Inputkan id penghuni anda: "))
-        userview.showKategori()
-        idkategori = int(input("Inputkan kategori penggunaan anda: "))
-        tanggal = "date()"
-        model.insert([idpenghuni,idkategori,tanggal])
+        model.insert(saver)
+        delete()
         
     def insertJadwal():
         model = jadwal()
         model.fiturjadwal()
-        return model
+        model.insert(saver)
+        delete()
         
     def insertPenghuni():
         model = penghuni()
         model.fiturpenghuni()
-        name = str(input("Masukkan nama penghuni baru : "))
-        model.insert_single(name)
+        model.insert_single(str(saver[0]))
+        delete()
     
     def insertLorong():
         model = lorong()
-        userview.showIDLorong()
-        idlorong = int(input("Inputkan lorong yang ingin ditambahkan : "))
-        userview.showPenghuni()
-        idpenghuni = int(input("Inputkan penghuni ID yang ingin ditambahkan ke lorong tersebut : "))
-        name = "pass"
-        model.insert([idlorong,idpenghuni,name])    
-
-print(userview.showviewJadwal())
+        model.insert(saver)
+        delete()

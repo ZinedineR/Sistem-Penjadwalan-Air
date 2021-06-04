@@ -29,9 +29,9 @@ class loginPage ( wx.Frame ):
 
 		bSizer1.Add( self.plaintext, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		sbSizer11 = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, u"password" ), wx.VERTICAL )
+		sbSizer11 = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, u"password = root" ), wx.VERTICAL )
 
-		self.text_password = wx.TextCtrl( sbSizer11.GetStaticBox(), wx.ID_ANY, u"jkasjhdjad", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.text_password = wx.TextCtrl( sbSizer11.GetStaticBox(), wx.ID_ANY, u"root", wx.DefaultPosition, wx.DefaultSize, 0 )
 		sbSizer11.Add( self.text_password, 0, wx.ALL|wx.EXPAND, 5 )
 
 
@@ -242,7 +242,7 @@ class JadwalPenggunaan ( wx.Frame ):
 class lihatPenjadwalanAir ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penjadwalan Air", pos = wx.DefaultPosition, size = wx.Size( 569,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penjadwalan Air", pos = wx.DefaultPosition, size = wx.Size( 569,326 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -261,7 +261,7 @@ class lihatPenjadwalanAir ( wx.Frame ):
 		self.m_grid6 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid6.CreateGrid( 5, 5 )
+		self.m_grid6.CreateGrid( 10, 5 )
 		self.m_grid6.EnableEditing( True )
 		self.m_grid6.EnableGridLines( True )
 		self.m_grid6.EnableDragGridSize( False )
@@ -987,7 +987,7 @@ class lorongPage ( wx.Frame ):
 class lihatLorong ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Lorong", pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Lorong", pos = wx.DefaultPosition, size = wx.Size( 500,504 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -1003,7 +1003,7 @@ class lihatLorong ( wx.Frame ):
 		self.m_grid10 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid10.CreateGrid( 6, 3 )
+		self.m_grid10.CreateGrid( 20, 3 )
 		self.m_grid10.EnableEditing( True )
 		self.m_grid10.EnableGridLines( True )
 		self.m_grid10.EnableDragGridSize( False )
@@ -1162,7 +1162,7 @@ class penambahanPenghunitwo ( wx.Frame ):
 		self.m_grid12 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid12.CreateGrid( 10, 2 )
+		self.m_grid12.CreateGrid( 15, 2 )
 		self.m_grid12.EnableEditing( True )
 		self.m_grid12.EnableGridLines( True )
 		self.m_grid12.EnableDragGridSize( False )
@@ -1300,7 +1300,7 @@ class penghuniPage ( wx.Frame ):
 class lihatPenghuni ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penghuni", pos = wx.DefaultPosition, size = wx.Size( 500,403 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penghuni", pos = wx.DefaultPosition, size = wx.Size( 500,441 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -1316,7 +1316,7 @@ class lihatPenghuni ( wx.Frame ):
 		self.m_grid13 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid13.CreateGrid( 10, 2 )
+		self.m_grid13.CreateGrid( 15, 2 )
 		self.m_grid13.EnableEditing( True )
 		self.m_grid13.EnableGridLines( True )
 		self.m_grid13.EnableDragGridSize( False )
@@ -1446,28 +1446,28 @@ class userMenu ( wx.Frame ):
 		fgSizer18.SetFlexibleDirection( wx.BOTH )
 		fgSizer18.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-		self.LihatPenggunaan = wx.StaticText( self, wx.ID_ANY, u"Lihat Penggunaan ", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.LihatPenggunaan.Wrap( -1 )
-
-		fgSizer18.Add( self.LihatPenggunaan, 0, wx.ALL, 5 )
-
-		self.lihat = wx.Button( self, wx.ID_ANY, u"Lihat", wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer18.Add( self.lihat, 0, wx.ALL, 5 )
-
 		self.LihatJadwal = wx.StaticText( self, wx.ID_ANY, u"Lihat Jadwal", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.LihatJadwal.Wrap( -1 )
 
 		fgSizer18.Add( self.LihatJadwal, 0, wx.ALL, 5 )
 
-		self.lihatJadwal = wx.Button( self, wx.ID_ANY, u"Lihat", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.lihatJadwal = wx.Button( self, wx.ID_ANY, u"Lihat Jadwal", wx.DefaultPosition, wx.DefaultSize, 0 )
 		fgSizer18.Add( self.lihatJadwal, 0, wx.ALL, 5 )
+
+		self.LihatPenggunaan = wx.StaticText( self, wx.ID_ANY, u"Lihat Penggunaan ", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.LihatPenggunaan.Wrap( -1 )
+
+		fgSizer18.Add( self.LihatPenggunaan, 0, wx.ALL, 5 )
+
+		self.lihat = wx.Button( self, wx.ID_ANY, u"Lihat Penggunaan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer18.Add( self.lihat, 0, wx.ALL, 5 )
 
 		self.penambahanPenggunaan = wx.StaticText( self, wx.ID_ANY, u"Penambahan Penggunaan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.penambahanPenggunaan.Wrap( -1 )
 
 		fgSizer18.Add( self.penambahanPenggunaan, 0, wx.ALL, 5 )
 
-		self.tambah = wx.Button( self, wx.ID_ANY, u"Tambah", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.tambah = wx.Button( self, wx.ID_ANY, u"Tambah Penggunaan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		fgSizer18.Add( self.tambah, 0, wx.ALL, 5 )
 
 
@@ -1480,20 +1480,22 @@ class userMenu ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.lihat.Bind( wx.EVT_BUTTON, self.userClickLihat )
-		self.lihatJadwal.Bind( wx.EVT_BUTTON, self.userClickLihat )
-		self.tambah.Bind( wx.EVT_BUTTON, self.userClickTambah )
+		self.lihatJadwal.Bind( wx.EVT_BUTTON, self.ClickLihatJadwal )
+		self.lihat.Bind( wx.EVT_BUTTON, self.ClickLihatPenggunaan )
+		self.tambah.Bind( wx.EVT_BUTTON, self.ClickTambahPenggunaan )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def userClickLihat( self, event ):
+	def ClickLihatJadwal( self, event ):
 		event.Skip()
 
+	def ClickLihatPenggunaan( self, event ):
+		event.Skip()
 
-	def userClickTambah( self, event ):
+	def ClickTambahPenggunaan( self, event ):
 		event.Skip()
 
 
@@ -1565,14 +1567,14 @@ class lihatPenggunaan ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.kembali.Bind( wx.EVT_BUTTON, self.userClickKembali )
+		self.kembali.Bind( wx.EVT_BUTTON, self.clickKembali )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def userClickKembali( self, event ):
+	def clickKembali( self, event ):
 		event.Skip()
 
 
@@ -1583,7 +1585,7 @@ class lihatPenggunaan ( wx.Frame ):
 class lihatJadwal ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Jadwal", pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Jadwal", pos = wx.DefaultPosition, size = wx.Size( 500,343 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -1599,7 +1601,7 @@ class lihatJadwal ( wx.Frame ):
 		self.m_grid15 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid15.CreateGrid( 5, 5 )
+		self.m_grid15.CreateGrid( 10, 5 )
 		self.m_grid15.EnableEditing( True )
 		self.m_grid15.EnableGridLines( True )
 		self.m_grid15.EnableDragGridSize( False )
@@ -1645,22 +1647,22 @@ class lihatJadwal ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.kembali.Bind( wx.EVT_BUTTON, self.userClickKembali )
+		self.kembali.Bind( wx.EVT_BUTTON, self.clickKembali )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def userClickKembali( self, event ):
+	def clickKembali( self, event ):
 		event.Skip()
 
 
 ###########################################################################
-## Class penambahanPenggunaan
+## Class penambahanPenggunaanone
 ###########################################################################
 
-class penambahanPenggunaan ( wx.Frame ):
+class penambahanPenggunaanone ( wx.Frame ):
 
 	def __init__( self, parent ):
 		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Penambahan Penggunaan", pos = wx.DefaultPosition, size = wx.Size( 500,453 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
@@ -1679,7 +1681,7 @@ class penambahanPenggunaan ( wx.Frame ):
 		self.m_grid16 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid16.CreateGrid( 11, 2 )
+		self.m_grid16.CreateGrid( 15, 2 )
 		self.m_grid16.EnableEditing( True )
 		self.m_grid16.EnableGridLines( True )
 		self.m_grid16.EnableDragGridSize( False )
@@ -1732,22 +1734,22 @@ class penambahanPenggunaan ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.selanjutnya.Bind( wx.EVT_BUTTON, self.userClickSelanjutnya )
+		self.selanjutnya.Bind( wx.EVT_BUTTON, self.clickSelanjutnya )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def userClickSelanjutnya( self, event ):
+	def clickSelanjutnya( self, event ):
 		event.Skip()
 
 
 ###########################################################################
-## Class penambahanPenggunaan
+## Class penambahanPenggunaantwo
 ###########################################################################
 
-class penambahanPenggunaan ( wx.Frame ):
+class penambahanPenggunaantwo ( wx.Frame ):
 
 	def __init__( self, parent ):
 		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Penambahan Penggunaan", pos = wx.DefaultPosition, size = wx.Size( 500,260 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
@@ -1819,14 +1821,14 @@ class penambahanPenggunaan ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.selesai.Bind( wx.EVT_BUTTON, self.userClickSelesai )
+		self.selesai.Bind( wx.EVT_BUTTON, self.clickSelesai )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def userClickSelesai( self, event ):
+	def clickSelesai( self, event ):
 		event.Skip()
 
 
