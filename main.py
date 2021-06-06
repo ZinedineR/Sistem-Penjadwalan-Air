@@ -63,8 +63,10 @@ class adminlihatPenjadwalanAir(gui.lihatPenjadwalanAir):
         gui.lihatPenjadwalanAir.__init__(self, parent)
         data = userview.showviewJadwal()
         for row in range(len(data)):
+            self.m_grid6.AppendRows(1) 
             for col in range(len(data[row])):
                 self.m_grid6.SetCellValue(row,col,str(data[row][col]))
+                       
         self.Show()
     def clickKembali(self, event):
         self.Hide()
@@ -78,6 +80,9 @@ class admintambahPenjadwalanAirone(gui.tambahPenjadwalanAirone):
             for col in range(len(data[row])):
                 self.m_grid4.SetCellValue(row,col,str(data[row][col]))
         self.Show()
+    def selectCell(self, event):
+        data = self.m_grid4.GetCellValue(self.m_grid4.GetRow(),self.m_grid4.GetCol())
+        self.m_textCtrl4.SetValue(data)
     def clickSelanjutnya(self, event):
         idtangki = int(self.m_textCtrl4.GetValue())
         saving(int(idtangki))
@@ -170,6 +175,7 @@ class adminHistoryTangki(gui.HistoryTangki):
         gui.HistoryTangki.__init__(self, parent)
         data = userview.showHistoryTangki()
         for row in range(len(data)):
+            self.m_grid8.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid8.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -199,6 +205,7 @@ class adminlihatLorong(gui.lihatLorong):
         gui.lihatLorong.__init__(self, parent)
         data = userview.showLorong()
         for row in range(len(data)):
+            self.m_grid10.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid10.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -225,6 +232,7 @@ class adminpenambahanPenghunitwo(gui.penambahanPenghunitwo):
         gui.penambahanPenghunitwo.__init__(self, parent)
         data = userview.showPenghuni()
         for row in range(len(data)):
+            self.m_grid12.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid12.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -258,6 +266,7 @@ class adminlihatPenghuni(gui.lihatPenghuni):
         gui.lihatPenghuni.__init__(self, parent)
         data = userview.showPenghuni()
         for row in range(len(data)):
+            self.m_grid13.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid13.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -302,6 +311,7 @@ class userlihatPenggunaan(gui.lihatPenggunaan):
         gui.lihatPenggunaan.__init__(self, parent)
         data = userview.showviewPenggunaan()
         for row in range(len(data)):
+            self.m_grid14.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid14.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -314,6 +324,7 @@ class userlihatJadwal(gui.lihatJadwal):
         gui.lihatJadwal.__init__(self, parent)
         data = userview.showviewJadwal()
         for row in range(len(data)):
+            self.m_grid15.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid15.SetCellValue(row,col,str(data[row][col]))
         self.Show()
@@ -326,6 +337,7 @@ class userpenambahanPenggunaanone(gui.penambahanPenggunaanone):
         gui.penambahanPenggunaanone.__init__(self, parent)
         data = userview.showPenghuni()
         for row in range(len(data)):
+            self.m_grid16.AppendRows(1)
             for col in range(len(data[row])):
                 self.m_grid16.SetCellValue(row,col,str(data[row][col]))
         self.Show()

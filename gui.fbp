@@ -1446,7 +1446,7 @@
             <property name="minimum_size"></property>
             <property name="name">lihatPenjadwalanAir</property>
             <property name="pos"></property>
-            <property name="size">569,326</property>
+            <property name="size">569,289</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Lihat Penjadwalan Air</property>
@@ -1573,8 +1573,8 @@
                         <property name="drag_col_move">0</property>
                         <property name="drag_col_size">1</property>
                         <property name="drag_grid_size">0</property>
-                        <property name="drag_row_size">1</property>
-                        <property name="editing">1</property>
+                        <property name="drag_row_size">0</property>
+                        <property name="editing">0</property>
                         <property name="enabled">1</property>
                         <property name="fg"></property>
                         <property name="floatable">1</property>
@@ -1609,7 +1609,7 @@
                         <property name="row_label_values"></property>
                         <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                         <property name="row_sizes"></property>
-                        <property name="rows">10</property>
+                        <property name="rows">0</property>
                         <property name="show">1</property>
                         <property name="size"></property>
                         <property name="subclass">; ; forward_declare</property>
@@ -1617,7 +1617,7 @@
                         <property name="tooltip"></property>
                         <property name="window_extra_style"></property>
                         <property name="window_name"></property>
-                        <property name="window_style"></property>
+                        <property name="window_style">wxHSCROLL</property>
                     </object>
                 </object>
                 <object class="sizeritem" expanded="0">
@@ -1901,6 +1901,7 @@
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
+                                <event name="OnGridSelectCell">selectCell</event>
                             </object>
                         </object>
                         <object class="sizeritem" expanded="0">
@@ -4418,7 +4419,7 @@
                                 <property name="label_bg"></property>
                                 <property name="label_font"></property>
                                 <property name="label_text"></property>
-                                <property name="margin_height">0</property>
+                                <property name="margin_height">170</property>
                                 <property name="margin_width">0</property>
                                 <property name="max_size"></property>
                                 <property name="maximize_button">0</property>
@@ -4440,7 +4441,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">6</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>
@@ -5018,7 +5019,7 @@
             <property name="minimum_size"></property>
             <property name="name">lihatLorong</property>
             <property name="pos"></property>
-            <property name="size">500,504</property>
+            <property name="size">500,416</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Lihat Lorong</property>
@@ -5179,7 +5180,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">20</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>
@@ -5804,7 +5805,7 @@
                         <property name="row_label_values"></property>
                         <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                         <property name="row_sizes"></property>
-                        <property name="rows">15</property>
+                        <property name="rows">0</property>
                         <property name="show">1</property>
                         <property name="size"></property>
                         <property name="subclass">; ; forward_declare</property>
@@ -6666,7 +6667,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">15</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>
@@ -7770,7 +7771,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">8</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>
@@ -8048,7 +8049,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">10</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>
@@ -8326,7 +8327,7 @@
                                 <property name="row_label_values"></property>
                                 <property name="row_label_vert_alignment">wxALIGN_CENTER</property>
                                 <property name="row_sizes"></property>
-                                <property name="rows">15</property>
+                                <property name="rows">0</property>
                                 <property name="show">1</property>
                                 <property name="size"></property>
                                 <property name="subclass">; ; forward_declare</property>

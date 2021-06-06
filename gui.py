@@ -242,7 +242,7 @@ class JadwalPenggunaan ( wx.Frame ):
 class lihatPenjadwalanAir ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penjadwalan Air", pos = wx.DefaultPosition, size = wx.Size( 569,326 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Penjadwalan Air", pos = wx.DefaultPosition, size = wx.Size( 569,289 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -258,11 +258,11 @@ class lihatPenjadwalanAir ( wx.Frame ):
 
 		bSizer8.Add( bSizer9, 1, wx.EXPAND, 5 )
 
-		self.m_grid6 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_grid6 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL )
 
 		# Grid
-		self.m_grid6.CreateGrid( 10, 5 )
-		self.m_grid6.EnableEditing( True )
+		self.m_grid6.CreateGrid( 0, 5 )
+		self.m_grid6.EnableEditing( False )
 		self.m_grid6.EnableGridLines( True )
 		self.m_grid6.EnableDragGridSize( False )
 		self.m_grid6.SetMargins( 0, 0 )
@@ -284,7 +284,7 @@ class lihatPenjadwalanAir ( wx.Frame ):
 		self.m_grid6.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.m_grid6.EnableDragRowSize( True )
+		self.m_grid6.EnableDragRowSize( False )
 		self.m_grid6.SetRowLabelSize( 80 )
 		self.m_grid6.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
@@ -402,6 +402,7 @@ class tambahPenjadwalanAirone ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.m_grid4.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.selectCell )
 		self.next.Bind( wx.EVT_BUTTON, self.clickSelanjutnya )
 
 	def __del__( self ):
@@ -409,6 +410,9 @@ class tambahPenjadwalanAirone ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def selectCell( self, event ):
+		event.Skip()
+
 	def clickSelanjutnya( self, event ):
 		event.Skip()
 
@@ -852,11 +856,11 @@ class HistoryTangki ( wx.Frame ):
 		self.m_grid8 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid8.CreateGrid( 6, 4 )
+		self.m_grid8.CreateGrid( 0, 4 )
 		self.m_grid8.EnableEditing( True )
 		self.m_grid8.EnableGridLines( True )
 		self.m_grid8.EnableDragGridSize( False )
-		self.m_grid8.SetMargins( 0, 0 )
+		self.m_grid8.SetMargins( 0, 170 )
 
 		# Columns
 		self.m_grid8.EnableDragColMove( False )
@@ -987,7 +991,7 @@ class lorongPage ( wx.Frame ):
 class lihatLorong ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Lorong", pos = wx.DefaultPosition, size = wx.Size( 500,504 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Lihat Lorong", pos = wx.DefaultPosition, size = wx.Size( 500,416 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -1003,7 +1007,7 @@ class lihatLorong ( wx.Frame ):
 		self.m_grid10 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid10.CreateGrid( 20, 3 )
+		self.m_grid10.CreateGrid( 0, 3 )
 		self.m_grid10.EnableEditing( True )
 		self.m_grid10.EnableGridLines( True )
 		self.m_grid10.EnableDragGridSize( False )
@@ -1162,7 +1166,7 @@ class penambahanPenghunitwo ( wx.Frame ):
 		self.m_grid12 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid12.CreateGrid( 15, 2 )
+		self.m_grid12.CreateGrid( 0, 2 )
 		self.m_grid12.EnableEditing( True )
 		self.m_grid12.EnableGridLines( True )
 		self.m_grid12.EnableDragGridSize( False )
@@ -1316,7 +1320,7 @@ class lihatPenghuni ( wx.Frame ):
 		self.m_grid13 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid13.CreateGrid( 15, 2 )
+		self.m_grid13.CreateGrid( 0, 2 )
 		self.m_grid13.EnableEditing( True )
 		self.m_grid13.EnableGridLines( True )
 		self.m_grid13.EnableDragGridSize( False )
@@ -1522,7 +1526,7 @@ class lihatPenggunaan ( wx.Frame ):
 		self.m_grid14 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid14.CreateGrid( 8, 4 )
+		self.m_grid14.CreateGrid( 0, 4 )
 		self.m_grid14.EnableEditing( True )
 		self.m_grid14.EnableGridLines( True )
 		self.m_grid14.EnableDragGridSize( False )
@@ -1601,7 +1605,7 @@ class lihatJadwal ( wx.Frame ):
 		self.m_grid15 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid15.CreateGrid( 10, 5 )
+		self.m_grid15.CreateGrid( 0, 5 )
 		self.m_grid15.EnableEditing( True )
 		self.m_grid15.EnableGridLines( True )
 		self.m_grid15.EnableDragGridSize( False )
@@ -1681,7 +1685,7 @@ class penambahanPenggunaanone ( wx.Frame ):
 		self.m_grid16 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid16.CreateGrid( 15, 2 )
+		self.m_grid16.CreateGrid( 0, 2 )
 		self.m_grid16.EnableEditing( True )
 		self.m_grid16.EnableGridLines( True )
 		self.m_grid16.EnableDragGridSize( False )
